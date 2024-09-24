@@ -1,0 +1,60 @@
+  program LabWorkNum1ver2;
+  uses
+    System.SysUtils;
+  begin
+  var a,b,h,x,y,eps:real;
+   Write('Введите A:');
+      Readln(a);
+      Write('Введите B:');
+      Readln(b);
+      Write('Введите шаг H:');
+      Readln(h);
+      Writeln('|------------|------------|');
+      Writeln('|     X      |      Y     |');
+      Writeln('|------------|------------|');
+      eps:=abs(h/1000000);
+      x:=a;
+      if (cos(pi*x)=pi/2) or (cos(pi*x)=-pi/2) or (x<=eps) then
+        begin
+          Writeln('|',x:12:6,'|Нет значения|');
+          Writeln('|------------|------------|');
+        end
+      else
+        begin
+          y:=sin(cos(Pi*x))/cos(cos(Pi*x))+(abs(x*x-5)/(x*x-5))*exp(ln(abs(x*x-5))/3)*(ln(x/10.5)+1/3);
+
+          Writeln('|',x:12:6,'|',y:12:6,'|' );
+          Writeln('|------------|------------|');
+        end;
+      while ((a>b) and h<0) or ((a<b) and h>0) do
+      begin
+      x:=x+h;
+      if (cos(pi*x)=pi/2) or (cos(pi*x)=-pi/2) or (x<=eps) then
+        begin
+          Writeln('|',x:12:6,'|Нет значения|');
+          Writeln('|------------|------------|');
+        end
+      else
+        begin
+          y:=sin(cos(Pi*x))/cos(cos(Pi*x))+(abs(x*x-5)/(x*x-5))*exp(ln(abs(x*x-5))/3)*(ln(x/10.5)+1/3);
+          Writeln('|',x:12:6,'|',y:12:6,'|' );
+          Writeln('|------------|------------|');
+        end;
+      end;
+      if(abs(x-b)>eps) then
+      begin
+      x:=b;
+      if (cos(pi*x)=pi/2) or (cos(pi*x)=-pi/2) or (x<=eps) then
+        begin
+          Writeln('|',x:12:6,'|Нет значения|');
+          Writeln('|------------|------------|');
+        end
+      else
+        begin
+          y:=sin(cos(Pi*x))/cos(cos(Pi*x))+(abs(x*x-5)/(x*x-5))*exp(ln(abs(x*x-5))/3)*(ln(x/10.5)+1/3);
+          Writeln('|',x:12:6,'|',y:12:6,'|' );
+          Writeln('|------------|------------|');
+        end;
+      end;
+      readln;
+  end.

@@ -1,0 +1,21 @@
+program LabWork2;
+uses System.SysUtils;
+begin
+var chisl:integer;
+var x,y,xSqr,i,eps:real;
+eps:=0.0000001
+while i<=(0.8+eps) do
+  begin
+  chisl:=256;
+  x:=i*0.1;
+  xSqr:=x*x;
+  y:=xSqr;
+  while (chisl<>0) do
+    begin
+    y:=xSqr+(chisl/y);
+    chisl:=trunc(chisl/2);
+    end;
+  writeln('X:',X:8:4,' Y:',Y:8:4);
+  end;
+readln;
+end.
