@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.470,C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\LabWorkNum1ver2.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.906,C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\LabWorkNum1ver2.dproj=G:\LabWorkNum1ver2.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.932,C:\ОАиП\ЛаборатонаяРабота№1\LabWorkNum1ver2.dproj=D:\Лабораторная№1 ОАиП\LabWorkNum1ver2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.932,D:\Лабораторная№1 ОАиП\LabWorkNum1ver2.dproj=C:\ОАиП\ЛаборатонаяРабота№1\LabWorkNum1ver2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.470,C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\LabWorkNum1ver2.dproj=C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.906,G:\LabWorkNum1ver2.dproj=C:\Users\Pavel\Documents\Embarcadero\Studio\Projects\LabWorkNum1ver2.dproj</Transaction>
   </Transactions>
 </BorlandProject>
