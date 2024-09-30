@@ -3,11 +3,12 @@ uses System.SysUtils;
 begin
 var chisl:integer;
 var x,y,xSqr,i,eps:real;
-eps:=0.0000001
-while i< do
+i:=0.5;
+eps:=0.0000001;
+while i<=(0.8+eps) do
   begin
   chisl:=256;
-  x:=i*0.1;
+  x:=i;
   xSqr:=x*x;
   y:=xSqr;
   while (chisl<>0) do
@@ -15,7 +16,10 @@ while i< do
     y:=xSqr+(chisl/y);
     chisl:=trunc(chisl/2);
     end;
+    y:=chisl/y;
+
   writeln('X:',X:8:4,' Y:',Y:8:4);
+  i:=i+0.05;
   end;
 readln;
 end.
