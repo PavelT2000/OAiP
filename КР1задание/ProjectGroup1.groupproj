@@ -1,0 +1,39 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6646C063-99C8-45BD-8125-846C9A881D8C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ControlWork1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\КР2задание\ControlWork1.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ControlWork1">
+        <MSBuild Projects="..\КР2задание\ControlWork1.dproj"/>
+    </Target>
+    <Target Name="ControlWork1:Clean">
+        <MSBuild Projects="..\КР2задание\ControlWork1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ControlWork1:Make">
+        <MSBuild Projects="..\КР2задание\ControlWork1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ControlWork1;ControlWork1"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ControlWork1:Clean;ControlWork1:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ControlWork1:Make;ControlWork1:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

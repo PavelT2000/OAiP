@@ -1,0 +1,194 @@
+program LabWork6v2;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+const
+  size = 8;
+  randomSize = 100;
+
+var
+  x, y: integer;
+
+Type
+  Tmatrix = array [1 .. size, 1 .. size] of integer;
+
+Type
+  Tmas = array [1 .. size * size] of integer;
+
+var
+  matrixPreset: Tmatrix = ((1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 3, 4, 5, 6, 7, 8),
+    (1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 3, 4, 5, 6, 7, 8),
+    (1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 3, 4, 5, 6, 7, 8),
+    (1, 2, 3, 4, 5, 6, 7, 8), (1, 2, 3, 4, 5, 6, 7, 8));
+
+function RandomMatrix(): Tmatrix;
+begin
+  for var I := 1 to size do
+  begin
+    for var j := 1 to size do
+    begin
+      Result[I][j] := Random(randomSize);
+    end;
+  end;
+end;
+
+function MatrixToMas(var matrix: Tmatrix): Tmas;
+begin
+  for var I := 1 to size do
+  begin
+    for var j := 1 to size do
+    begin
+      Result[(I - 1) * size + j] := matrix[I][j];
+    end;
+  end;
+end;
+
+procedure OutData(var matrix: Tmatrix);
+begin
+
+  for var I := 1 to size do
+  begin
+    for var j := 1 to size do
+    begin
+      write(matrix[I][j]:4, ' ');
+    end;
+    writeln;
+    writeln;
+  end;
+
+end;
+
+function shake_sort(var arr: Tmas): Tmas;
+
+var
+  left, right, I, temp, lastSwap, N: integer;
+begin
+  N := size * size;
+  Result := arr;
+  left := 1;
+  right := N;
+  lastSwap := 0;
+  while (right > left) do
+  begin
+    for I := left to right - 1 do
+    begin
+      if (Result[I] > Result[I + 1]) then
+      begin
+        temp := Result[I];
+        Result[I] := Result[I + 1];
+        Result[I + 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    right := lastSwap;
+    for I := right downto left + 1 do
+    begin
+      if (Result[I] < Result[I - 1]) then
+      begin
+        temp := Result[I];
+        Result[I] := Result[I - 1];
+        Result[I - 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    left := lastSwap;
+  end;
+end;
+
+function invertMas(var arr: Tmas): Tmas;
+begin
+  var
+    buf, N: integer;
+  N := size * size;
+  Result := arr;
+  for var I := 1 to trunc(N / 2) do
+  begin
+    buf := Result[I];
+    Result[I] := Result[N - I + 1];
+    Result[N - I + 1] := buf;
+  end;
+
+end;
+
+function SpiralMatrixFromMas(var mas: Tmas): Tmatrix;
+begin
+  var
+    iBeg, iFin, jBeg, jFin, k, I, j: integer;
+  iBeg := 1;
+  iFin := 0;
+  jBeg := 1;
+  jFin := 0;
+  k := 1;
+  I := size;
+  j := 1;
+
+  while k <= size * size do
+  begin
+    Result[I][j] := mas[k];
+    if (j = jBeg) and (I < size - iFin) then
+      Inc(I)
+    else if (j = size - jFin) and (I > iBeg) then
+      dec(I)
+    else if (I = size - iFin) and (j <= size - jFin) then
+      Inc(j)
+    else
+      dec(j);
+
+    if ((I = size - iFin - 1) and (j = jBeg) and (jBeg <> size - jFin)) then
+    begin
+
+      Inc(iBeg);
+      Inc(iFin);
+      Inc(jBeg);
+      Inc(jFin);
+
+    end;
+    Inc(k);
+  end;
+
+end;
+
+begin
+  var
+    matrix: Tmatrix;
+  var
+    mas: Tmas;
+  var
+    choose: integer;
+
+  begin
+    writeln('Данная программа сортирует по спирали по часовой стрелке');
+    writeln('Выберите ввод матрицы:');
+    writeln('0.Случайно');
+    writeln('1.Пресетом');
+
+  end;
+  readln(choose);
+  case choose of
+    0:
+      begin
+        Writeln('Ваша случайная матрица');
+        matrix := RandomMatrix;
+        Writeln;
+        Writeln;
+
+      end;
+    1:matrix:=PresetMatrix
+
+
+  end;
+
+  matrix := RandomMatrix;
+  mas := MatrixToMas(matrix);
+  mas := shake_sort(mas);
+  mas := invertMas(mas);
+  matrix := SpiralMatrixFromMas(mas);
+  OutData(matrix);
+
+  readln;
+
+end.

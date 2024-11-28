@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.605,C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4.dproj=C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.897,C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V2.dproj=C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V3.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.078,C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V3.dproj=C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.274,C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V3.dproj=C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4V2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.941,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project6.dproj=C:\GitHub\OAiP\Лабораторная№4\LabWorkNum4.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

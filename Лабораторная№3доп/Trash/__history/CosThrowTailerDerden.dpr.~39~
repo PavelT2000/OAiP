@@ -1,0 +1,58 @@
+program SinThrowTailerDerden;
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+begin
+  var
+    sinIn, sinOut,sinInSqr, next, eps: real;
+  var
+    fact, i, k: integer;
+
+  eps := 0.000001;
+  k := 0;
+  readln(sinIn);
+
+  begin // Синус
+    if abs(sinIn) > pi / 2 then
+    begin
+
+
+      sinIn := sinIn - (trunc(sinIn / pi) div 2) * 2 * pi;
+      if sinIn < 0 then
+        sinIn := pi * 2 + sinIn;
+      if (sinIn > pi / 2) and (sinIn <= pi * 3 / 2) then
+        sinIn := pi - sinIn;
+      if sinIn > pi * 3 / 2 then
+        sinIn := -(2 * pi - sinIn)
+
+    end;
+    sinInSqr:=sinIn*sinIn;
+    next:=sinIn/1;
+    sinOut:=next;
+    fact:=1;
+    k := k + 1;
+
+
+    // Расчёт след члена суммы
+    fact:=fact+1;
+    next:=-next*sinInSqr/fact;
+    fact:=fact+1;
+    next:=next/fact;
+    //
+    while abs(next) >= eps do
+    begin
+    sinOut:=sinOut+next;
+    fact:=fact+1;
+    next:=-next*sinInSqr/fact;
+    fact:=fact+1;
+    next:=next/fact;
+    end;
+
+    writeln(sin(sinIn):16:8 , ' ', sinOut:16:8 );
+    readln(sinIn);
+  end;
+
+end.

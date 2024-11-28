@@ -1,25 +1,14 @@
 program LabWork2;
 uses System.SysUtils;
+function Recursion(deep:integer; x: real; intState:real):real;
 begin
-var chisl:integer;
-var x,y,xSqr,i,eps:real;
-i:=0.5;
-eps:=0.0000001;
-while i<=(0.8+eps) do
-  begin
-  chisl:=256;
-  x:=i;
-  xSqr:=x*x;
-  y:=xSqr;
-  while (chisl<>1) do
-    begin
-    y:=xSqr+(chisl/y);
-    chisl:=trunc(chisl/2);
-    end;
-    y:=chisl/y;
+Result:=intState+(deep*(x-1-deep))/Recursion(deep-1, x ,intState*2);
+if (deep=1) then
+begin
+   Result:=intState+(1*(x-2))/4096;
+end;
+end;
+begin
 
-  writeln('X:',X:8:4,' Y:',Y:8:4);
-  i:=i+0.05;
-  end;
 readln;
 end.

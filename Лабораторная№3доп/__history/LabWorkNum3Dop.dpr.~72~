@@ -1,0 +1,153 @@
+program LabWorkNum3Dop;
+
+uses
+  System.SysUtils;
+
+begin
+  var
+    a, b, h, x, y, eps, sinIn, sinOut, sinInSqr, next: real;
+  var k,fact: integer;
+  Write('Введите A:');
+  Readln(a);
+  Write('Введите B:');
+  Readln(b);
+  Write('Введите шаг H:');
+  Readln(h);
+  Writeln('|------------|------------|');
+  Writeln('|     X      |      Y     |');
+  Writeln('|------------|------------|');
+  eps := 0.0001;
+  x := a;
+
+  sinIn := x;
+
+  begin // Синус
+    k := 0;
+    if abs(sinIn) > pi / 2 then
+    begin
+      sinIn := sinIn - (trunc(sinIn / pi) div 2) * 2 * pi;
+      if sinIn < 0 then
+        sinIn := pi * 2 + sinIn;
+      if (sinIn > pi / 2) and (sinIn <= pi * 3 / 2) then
+        sinIn := pi - sinIn;
+      if sinIn > pi * 3 / 2 then
+        sinIn := -(2 * pi - sinIn)
+    end;
+    sinInSqr := sinIn * sinIn;
+    next := sinIn / 1;
+    sinOut := next;
+    fact := 1;
+    k := k + 1;
+    // Расчёт след члена суммы
+    fact := fact + 1;
+    next := -next * sinInSqr / fact;
+    fact := fact + 1;
+    next := next / fact;
+    //
+    while abs(next) >= eps do
+    begin
+      sinOut := sinOut + next;
+      fact := fact + 1;
+      next := -next * sinInSqr / fact;
+      fact := fact + 1;
+      next := next / fact;
+    end;
+  end;
+
+  y := x * x - 2 * x - sinOut; // расчёт функции
+  Writeln('|', x:12:6, '|', y:12:6, '|'); // Вывод
+  Writeln('|------------|------------|');
+
+  while ((x > b) and (h < 0) and (x + h > b)) or
+    ((x < b) and (h > 0) and (x + h < b)) do
+  begin
+    x := x + h;
+
+    sinIn := x;
+
+    begin // Синус
+      k := 0;
+
+      if abs(sinIn) > pi / 2 then
+      begin
+        sinIn := sinIn - (trunc(sinIn / pi) div 2) * 2 * pi;
+        if sinIn < 0 then
+          sinIn := pi * 2 + sinIn;
+        if (sinIn > pi / 2) and (sinIn <= pi * 3 / 2) then
+          sinIn := pi - sinIn;
+        if sinIn > pi * 3 / 2 then
+          sinIn := -(2 * pi - sinIn)
+      end;
+      sinInSqr := sinIn * sinIn;
+      next := sinIn / 1;
+      sinOut := next;
+      fact := 1;
+      k := k + 1;
+      // Расчёт след члена суммы
+      fact := fact + 1;
+      next := -next * sinInSqr / fact;
+      fact := fact + 1;
+      next := next / fact;
+      //
+      while abs(next) >= eps do
+      begin
+        sinOut := sinOut + next;
+        fact := fact + 1;
+        next := -next * sinInSqr / fact;
+        fact := fact + 1;
+        next := next / fact;
+      end;
+      
+    end;
+
+    y := x * x - 2 * x - sinOut; // расчёт функции
+    Writeln('|', x:12:6, '|', y:12:6, '|'); // Вывод
+    Writeln('|------------|------------|');
+
+  end;
+  if (abs(x - b) > eps) then
+  begin
+
+    x := x + h;
+    sinIn := x;
+
+    begin // Синус
+      k := 0;
+      if abs(sinIn) > pi / 2 then
+      begin
+        sinIn := sinIn - (trunc(sinIn / pi) div 2) * 2 * pi;
+        if sinIn < 0 then
+          sinIn := pi * 2 + sinIn;
+        if (sinIn > pi / 2) and (sinIn <= pi * 3 / 2) then
+          sinIn := pi - sinIn;
+        if sinIn > pi * 3 / 2 then
+          sinIn := -(2 * pi - sinIn)
+      end;
+      sinInSqr := sinIn * sinIn;
+      next := sinIn / 1;
+      sinOut := next;
+      fact := 1;
+      k := k + 1;
+      // Расчёт след члена суммы
+      fact := fact + 1;
+      next := -next * sinInSqr / fact;
+      fact := fact + 1;
+      next := next / fact;
+      //
+      while abs(next) >= eps do
+      begin
+        sinOut := sinOut + next;
+        fact := fact + 1;
+        next := -next * sinInSqr / fact;
+        fact := fact + 1;
+        next := next / fact;
+      end;
+
+    end;
+    y := x * x - 2 * x - sinOut; // расчёт функции
+    Writeln('|', x:12:6, '|', y:12:6, '|'); // Вывод
+    Writeln('|------------|------------|');
+  end;
+  Readln;
+
+end.

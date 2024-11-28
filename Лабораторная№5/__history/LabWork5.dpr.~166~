@@ -1,0 +1,198 @@
+﻿program LabWork5;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+const
+  L = 2000;
+  RandomLength = 100;
+
+var
+  curLen: integer;
+
+Type
+  arrT = array [1 .. L] of integer;
+
+procedure generateUnSortedMas(var arr: arrT);
+begin
+  for var I := 1 to L do
+  begin
+    arr[I] := Random(RandomLength);
+  end;
+end;
+
+procedure changeSortedMas(var arr: arrT; N: integer);
+begin
+  for var I := 1 to trunc(N / 10) do
+  begin
+    arr[Random(9) + (I - 1) * 10 + 1] := Random(RandomLength);
+
+  end;
+end;
+
+procedure invertSortedMas(var arr: arrT; N: integer);
+begin
+  var
+    buf: integer;
+  for var I := 1 to trunc(N / 2) do
+  begin
+    buf := arr[I];
+    arr[I] := arr[N - I + 1];
+    arr[N - I + 1] := buf;
+  end;
+
+end;
+
+procedure shake_sort(var arr: arrT; N: integer;
+  var comparisonCounter, swapCounter: integer);
+
+var
+  left, right, I, temp, lastSwap: integer;
+begin
+  left := 1;
+  right := N;
+  lastSwap := 0;
+  while (right > left) do
+  begin
+    for I := left to right - 1 do
+    begin
+      comparisonCounter := comparisonCounter + 1;
+      if (arr[I] > arr[I + 1]) then
+      begin
+        swapCounter := swapCounter + 3;
+        temp := arr[I];
+        arr[I] := arr[I + 1];
+        arr[I + 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    right := lastSwap;
+
+    for I := right downto left + 1 do
+    begin
+      comparisonCounter := comparisonCounter + 1;
+      if (arr[I] < arr[I - 1]) then
+      begin
+        swapCounter := swapCounter + 3;
+        temp := arr[I];
+        arr[I] := arr[I - 1];
+        arr[I - 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    left := lastSwap;
+
+  end;
+end;
+
+procedure simpleBuble_Sort(var A: arrT; N: integer;
+  var comparisonCounter, swapCounter: integer);
+begin
+  var
+    I, temp, j: integer;
+  I := 2;
+  while I <= N do
+  begin
+    j := N;
+    while j >= I do
+    begin
+      comparisonCounter := comparisonCounter + 1;
+      if A[j - 1] > A[j] then
+      begin
+        swapCounter := swapCounter + 3;
+        temp := A[j - 1];
+        A[j - 1] := A[j];
+        A[j] := temp;
+      end;
+      j := j - 1;
+    end;
+    I := I + 1;
+  end;
+
+end;
+
+procedure printTableHat;
+begin
+  writeln('/                                                                               \');
+  writeln('|-------------|---------------------|---------------------|---------------------|');
+  writeln('|    Type     |    buble sort       |    shake sort       |        Sort 3       |');
+  writeln('|     of      |----------|----------|----------|----------|----------|----------|');
+  writeln('|    array    | Swaps    |comparison| swaps    |comparison| swaps    |comparison|');
+  writeln('|-------------|----------|----------|----------|----------|----------|----------|');
+end;
+
+procedure printInfo(var A, b: arrT; curLen: integer; name: string);
+begin
+  var
+    comparisonCounter, swapCounter: integer;
+  b := A;
+  comparisonCounter := 0;
+  swapCounter := 0;
+  simpleBuble_Sort(b, curLen, comparisonCounter, swapCounter);
+  write('|N=', curLen:4, ' ', name, '|');
+  write(swapCounter:10, '|', comparisonCounter:10, '|');
+  b := A;
+  comparisonCounter := 0;
+  swapCounter := 0;
+  shake_sort(b, curLen, comparisonCounter, swapCounter);
+  write(swapCounter:10, '|', comparisonCounter:10, '|');
+  writeln('          |          |');
+
+  A := b;
+  writeln('|-------------|----------|----------|----------|----------|----------|----------|');
+
+end;
+
+procedure printBlock(var unSortedMas, sortedMas, mainMas: arrT;
+  curLen: integer);
+begin
+
+  printInfo(unSortedMas, sortedMas, curLen, 'Unsort');
+  // changeSortedMas(unSortedMas, curLen);
+  printInfo(unSortedMas, sortedMas, curLen, '  Sort');
+  // changeSortedMas(unSortedMas, curLen);
+  invertSortedMas(unSortedMas, curLen);
+  printInfo(unSortedMas, sortedMas, curLen, 'Invert');
+
+end;
+
+procedure printCrabic();
+begin
+  writeln('____________________________$$_____________________ $$___________________________');
+  writeln('__________________________$$$__$__________________$__$$$_________________________');
+  writeln('_________________________$$$___$$________________$$___$$$________________________');
+  writeln('_________________________$$$$$$$$________________$$$$$$$$________________________');
+  writeln('__________________________$$$$$$__________________$$$$$$_________________________');
+  writeln('___________________________$$$$____$$ $$$$$ $$$____$$$$__________________________');
+  writeln('_____________________________$$__$$$$$$$$$$$$$$$$__$$____________________________');
+  writeln('_________________________$$___$$$$$$$$$$$$$$$$$$$$$$___$$________________________');
+  writeln('_______________________$$__$$__$$$$$$$$$$$$$$$$$$$$__$$__$$______________________');
+  writeln('______________________$______$$$$$$$$$$$$$$$$$$$$$$$$______$_____________________');
+  writeln('______________________$__$$$____$$$$$$$$$$$$$$$$$$____$$$__$_____________________');
+  writeln('________________________$___$$$$_$$$$$$$$$$$$$$$$_$$$$___$_______________________');
+  writeln('_______________________$_________$_$$$$$$$$$$$$_$_________$______________________');
+  writeln('_______________________$______$$$________________$$$______$______________________');
+  writeln('_____________________________$______________________$____________________________');
+  writeln('____________________________$________________________$___________________________');
+  writeln('____________________________$_________________________$__________________________');
+
+end;
+
+begin
+  var
+    mainMas, unSortMas, sortMas: arrT;
+  generateUnSortedMas(mainMas);
+  unSortMas := mainMas;
+  printTableHat;
+  printBlock(unSortMas, sortMas, mainMas, 10);
+  unSortMas := mainMas;
+  printBlock(unSortMas, sortMas, mainMas, 100);
+  unSortMas := mainMas;
+  printBlock(unSortMas, sortMas, mainMas, 2000);
+  //printCrabic;
+  readln;
+
+end.

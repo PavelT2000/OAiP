@@ -1,0 +1,45 @@
+program LabWork2Dop;
+uses
+  System.SysUtils;
+var  x,y,eps,h:real;
+var  n:integer;
+
+begin
+ x:=0.45;
+ eps:=0.0000001;
+ begin
+ writeln('|--------|--------|--------|--------|--------|--------|--------|');
+ writeln('|********|        |        |        |        |        |        |');
+ writeln('|********|    N=2 |    N=6 |    N=10|    N=14|    N=18|    N=22|');
+ writeln('|********|        |        |        |        |        |        |');
+ writeln('|--------|--------|--------|--------|--------|--------|--------|');
+ end;
+ while(x<=0.6+eps) do
+ begin
+   writeln('|        |        |        |        |        |        |        |');
+   write('|X=',X:6:4,'|');
+
+
+
+   for n  := 1 to 2 do
+        begin
+
+        y:=y-(ln(n*x)/(n+1));
+        end;
+   y:=y+sin(x/n);
+   write('',Y:8:4,'|');
+   for  n:= 3 to 23 do
+   begin
+
+      y:=y-(ln(n*x)/(n+1));
+      if ((n-2) mod 4)=0 then
+      write('',y:8:4,'|');
+
+   end;
+   writeln;
+   writeln('|        |        |        |        |        |        |        |');
+   writeln('|--------|--------|--------|--------|--------|--------|--------|');
+  x:=x+0.05;
+ end;
+ readln;
+end.

@@ -1,0 +1,78 @@
+program LabWork3V2;
+{$APPTYPE CONSOLE}
+{$R *.res}
+uses
+  System.SysUtils;
+var x,xx,xxxx,y,eps,e,h,sumElem:real;
+var count,k,pow,znam:integer;
+var check:boolean;
+
+begin
+
+x:=-0.6;
+h:=0.05;
+e:=h/10000;
+writeln('____________________________________________________________________________________');
+writeln('|   x   |  f1(x) |        e=10^(-2)    |      e=10^(-3)      |      e=10^(-4)      |');
+writeln('|_______|________|_____________________|_____________________|_____________________|');
+writeln('|       |        |  F2(x)        |   N |   F2(x)       | N   |   F2(x)       | N   |');
+writeln('|_______|________|_______________|_____|_______________|_____|_______________|_____|');
+for count := 1 to 20 do
+begin
+    if abs(x)<eps then
+    x:=0;
+    check:=true;
+    xx:=x*x;
+    xxxx:=xx*xx;
+    //Подсчёт первой функции
+    y:=x/2+1/8*(xx-1)*ln((1+x)/(1-x))-1/4*(xx+1)*arctan(x);
+    write('|',x:7:3,'|',y:8:5,'|');
+    //Подсчёт второй функции
+    eps:=0.01;
+    k:=0;
+    sumElem:=x;
+    //Вовзедение в степень
+    for pow := 2 to 4*k+5 do
+    begin
+        sumElem:=SumElem*x;
+    end;
+    znam:=((4*k+3)*(4*k+5));
+    sumElem:=sumElem/znam;
+    y:=sumElem;
+    //
+    k:=k+1;
+    sumElem:=sumElem*znam/((4*k+3)*(4*k+5))*xxxx;
+    znam:=((4*k+3)*(4*k+5));
+
+    while(check) do
+    begin
+      if abs(sumElem)<eps then
+      begin
+          if abs(eps-0.0001)<E then
+          begin
+              check:=false;
+              write(y:15:10,'|');
+              writeln( k:5,'|');
+          end
+          else
+          begin
+              eps:=eps/10;
+              write(y:15:10,'|');
+              write( k:5,'|');
+          end;
+      end
+      else
+      begin
+          y:=y+sumElem;
+          K:=k+1;
+          sumElem:=sumElem*znam/((4*k+3)*(4*k+5))*xxxx;
+
+          znam:=((4*k+3)*(4*k+5));
+
+      end;
+  end;
+   x:=x+h;
+  end;
+  writeln('|_______|________|_______________|_____|_______________|_____|_______________|_____|');
+readln;
+end.

@@ -18,9 +18,9 @@ begin
  begin
    writeln('|        |        |        |        |        |        |        |');
    write('|X=',X:6:4,'|');
-   y:=0;
 
-   y:=y+10*exp(x);
+
+   y:=10*exp(x);
    for n := 1 to 10 do
         begin
 

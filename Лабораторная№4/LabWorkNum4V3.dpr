@@ -1,0 +1,158 @@
+program LabWorkNum4V3;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+const
+  L = 1000000;
+
+Type
+  TMAS = array [1 .. L] of Char;
+
+Var
+  MAS1: TMAS;
+  input: Char;
+  i, N, ans, even, choose: integer;
+  check, funRes: boolean;
+
+procedure InputMas();
+begin
+
+  i := 1;
+  read(input);
+  while input <> #$D do
+  begin
+    MAS1[i] := input;
+    read(input);
+    i := i + 1;
+  end;
+  readln;
+  if i <> N + 1 then
+    N := i - 1;
+end;
+
+procedure RandomInputMas();
+begin
+  Randomize;
+  i := 1;
+  while i <= N do
+  begin
+    MAS1[i] := Char(Random(3) + 65);
+    write(MAS1[i]);
+    i := i + 1;
+  end;
+
+  writeln;
+end;
+
+function CheckEvenCenterOfSymmetry(var pos: integer): boolean;
+begin
+  Result := true;
+  if pos >= trunc(N / 2) + 1 - even then
+  begin
+    for var j := pos + 1 to N do
+    begin
+      if MAS1[j] <> MAS1[2 * pos - j + 1] then
+        Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+
+end;
+
+function CheckNotEvenCenterOfSymmetry(var pos: integer): boolean;
+begin
+  Result := true;
+  if pos > trunc(N / 2) then
+  begin
+    for var j := pos + 1 to N do
+    begin
+      if MAS1[j] <> MAS1[2 * pos - j] then
+        Result := False;
+    end;
+  end
+  else
+  begin
+    Result := False;
+  end;
+end;
+
+procedure userInput();
+begin
+  writeln('¬ведите число N (элементов последовательности)');
+  ans := 0;
+  readln(N);
+  even := abs((N mod 2) - 1);
+  writeln('¬ведите 0 дл€ случайного ввода');
+  writeln('¬ведите 1 дл€ ручного ввода');
+  readln(choose);
+  if (choose = 0) then
+    RandomInputMas();
+  if (choose = 1) then
+  begin
+    writeln('¬ведите в 1 строку без пробелов последовательность символов ');
+    InputMas();
+  end;
+end;
+
+procedure CheckingMassive();
+begin
+
+  i := trunc(N / 2) - even;
+  check := true;
+  while (i <= N) and (check) do
+  begin
+    funRes := CheckNotEvenCenterOfSymmetry(i);
+    if funRes then
+    begin
+      even := 0;
+      ans := i;
+      check := False;
+    end
+    else
+    begin
+      funRes := CheckEvenCenterOfSymmetry(i);
+      if funRes then
+      begin
+        even := 1;
+        ans := i;
+        check := False;
+      end
+    end;
+    i := i + 1;
+  end;
+
+end;
+
+procedure TransformingMas(var center: integer);
+begin
+  for var j := N + 1 to center * 2 - 1 + even do
+  begin
+    MAS1[j] := MAS1[center - (j - center) + even];
+  end;
+  N := center * 2 - 1 + even;
+
+end;
+
+procedure MasOutput();
+begin
+  for var j := 1 to N do
+  begin
+    write(MAS1[j]);
+  end;
+end;
+
+begin
+  userInput();
+  CheckingMassive();
+  TransformingMas(ans);
+  MasOutput();
+  readln;
+
+end.

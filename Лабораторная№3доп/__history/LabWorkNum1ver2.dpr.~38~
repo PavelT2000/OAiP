@@ -1,0 +1,83 @@
+  program LabWorkNum1ver2;
+  {$APPTYPE CONSOLE}
+  {$R *.res}
+  uses
+  System.SysUtils;
+
+
+begin
+  var input,ans,next,eps:real;
+  var fact,i,k:integer;
+
+  writeln('Ввод');
+  read(input);
+  eps:=0.00000001;
+  k:=0;
+  //Расчёт члена суммы
+    //Расчёт факториала
+  fact:=1;
+  for I := 1 to 2*k+1 do
+  begin
+    fact:=fact*i;
+  end;
+    //
+    //Расчёт степени
+  next:=input;
+  for I := 2 to k do
+  begin
+    next:=next*input;
+  end;
+  //
+  ans:=next/fact;
+  k:=k+1;
+  //Расчёт члена суммы
+    //Расчёт факториала
+  fact:=1;
+  for I := 1 to 2*k+1 do
+  begin
+    fact:=fact*i;
+  end;
+    //
+    //Расчёт степени
+  next:=input;
+  for I := 2 to 2*k+1 do
+  begin
+    next:=next*input;
+  end;
+
+  //
+  while abs(next)>=eps  do
+  begin
+    if (k mod 2)=1 then
+      ans:=ans-next
+    else
+      ans:=ans+next;
+    k:=k+1;
+  //Расчёт члена суммы
+    //Расчёт факториала
+  fact:=1;
+  for I := 1 to 2*k+1 do
+  begin
+    fact:=fact*i;
+  end;
+    //
+    //Расчёт степени
+  next:=input;
+  for I := 2 to 2*k+1 do
+  begin
+    next:=next*input;
+  end;
+  next:=next/fact;
+  end;
+
+  writeln(ans:16:8, ' ', cos(input):16:8);
+  readln(input);
+
+
+
+
+
+
+
+
+end.

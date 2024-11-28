@@ -1,0 +1,136 @@
+program LabWorkNum4V2;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+const
+  L = 1000;
+
+Type
+  TMAS = array [0 .. L] of Char;
+
+Var
+  MAS1: TMAS;
+
+var
+  input: Char;
+
+var
+  i, N, currentPos, ans, even, choose: integer;
+
+var
+  check: boolean;
+
+procedure InputMas();
+begin
+
+  i := 0;
+  read(input);
+  while input <> #$D do
+  begin
+    MAS1[i] := input;
+    read(input);
+    i := i + 1;
+  end;
+  if i <> N then
+  begin
+
+    N := i;
+  end;
+end;
+procedure RandomInputMas()  ;
+begin
+  i := 0;
+
+  while i < N do
+  begin
+    MAS1[i] := char(Random(5)+65);
+    write(Mas1[i]);
+    i := i + 1;
+  end;
+
+  writeln;
+end;
+
+begin
+  writeln('Введите число N (элементов последовательности)');
+  ans := 0;
+  i := 1;
+  readln(N);
+  even := abs((N mod 2) - 1);
+  currentPos := trunc(N / 2) - even;
+  writeln('Введите 0 для случайного ввода');
+
+  writeln('Введите 1 для ручного ввода');
+  readln(choose);
+  if(choose=0) then
+  RandomInputMas();
+  if(choose=1) then
+  begin
+  writeln('Введите в 1 строку без пробелов последовательность символов ');
+
+  InputMas();
+  end;
+
+
+  RandomInputMas();
+  i := currentPos;
+  while i < N - 1 do
+  begin
+    if (MAS1[i + 1] = MAS1[i - 1]) then
+      even := 0
+    else
+    begin
+      if MAS1[i] = MAS1[i + 1] then
+      begin
+        even := 1;
+      end;
+    end;
+    check := true;
+    while check do
+    begin
+      currentPos := currentPos + 1;
+      if currentPos = N - 1 then
+      begin
+        ans := i;
+        check := false;
+      end;
+
+      if ((i - (currentPos - i) + even) < 0)then
+      begin
+        i := currentPos;
+        check := false;
+      end
+      else
+      begin
+        //writeln(MAS1[currentPos], ' ', MAS1[i - (currentPos - i) + even]);
+        if ((i - (currentPos - i) + even) < 0) or
+          (MAS1[currentPos] <> MAS1[i - (currentPos - i) + even]) then
+        begin
+          i := currentPos;
+          check := false;
+        end;
+      end;
+    end;
+    if (currentPos = N - 1) then
+    begin
+      ans := i;
+      i := currentPos;
+    end;
+  end;
+  if ans = 0 then
+  begin
+    ans := i;
+  end;
+
+  ans := N - 2 * (N - ans - 1) - 1 + even;
+  if(ans=N) then
+  ans:=n-1;
+  writeln('Нужно добавить ',ans,' элементов, чтобы последовательность стала палиндромом ');
+  N := i;
+  readln(even);
+
+end.
