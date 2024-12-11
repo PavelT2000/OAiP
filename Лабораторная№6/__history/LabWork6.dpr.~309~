@@ -171,19 +171,24 @@ begin
   case choose of
     0:
       begin
-        Writeln('Ваша случайная матрица');
+        Writeln('Ваша случайная матрица:');
         matrix := RandomMatrix;
+        OutData(matrix);
+        Writeln;
+        Writeln;
 
       end;
-    1:matrix
+    1:matrix:=matrixPreset;
+
 
   end;
 
-  matrix := RandomMatrix;
+
   mas := MatrixToMas(matrix);
   mas := shake_sort(mas);
   mas := invertMas(mas);
   matrix := SpiralMatrixFromMas(mas);
+  writeln('Спирально отсортированая матрица:') ;
   OutData(matrix);
 
   readln;
