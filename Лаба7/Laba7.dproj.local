@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.310,C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project7.dproj=C:\GitHub\OAiP\Лаба7\Laba7.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.661,=C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2024.12.09 12:54:12.310,C:\GitHub\OAiP\Лаба7\Laba7.dproj=C:\Users\pavel\OneDrive\Документы\Embarcadero\Studio\Projects\Project7.dproj</Transaction>
   </Transactions>
 </BorlandProject>

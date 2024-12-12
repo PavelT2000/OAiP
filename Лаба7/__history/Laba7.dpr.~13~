@@ -4,9 +4,7 @@ program Laba7;
 {$R *.res}
 
 uses
-  System.SysUtils;
-  const sogl='bcdfghjklmnpqrstvwxz'
-
+  System.SysUtils, System.StrUtils;
 
 begin
   var
@@ -19,7 +17,7 @@ begin
 
     while (str[i] <> ' ') and (i <> 1) do
       Dec(i);
-    lastWord := str.Substring(i, length(str));
+    lastWord := str.Substring(i - 1, length(str));
   end;
 
   s1 := StringReplace(str, lastWord + ' ', '', [rfReplaceAll]);
@@ -32,24 +30,16 @@ begin
       counter: integer;
     counter := 1;
     doubleLetter := str[i] + str[i + 1];
-    if not doubleLetter.Contains(' ') then
+    for var j := i + 1 to length(str) - 1 do
     begin
-
-      for var j := i + 1 to length(str) - 1 do
-      begin
-        if (str[j] + str[j + 1]) = doubleLetter then
-          Inc(counter);
-      end;
-      usedCombos := usedCombos + doubleLetter + ' ';
-      s1 := s1 + ' ' + doubleLetter + '-' + IntToStr(counter);
+      if (str[j] + str[j + 1]) = doubleLetter then
+        Inc(counter);
     end;
+    usedCombos:=usedCombos+doubleLetter+' ';
+    s1:=s1+' '+doubleLetter+'-'+IntToStr(counter);
   end;
 
-  writeln('s1:'+s1);
-
-  s2 := StringReplace(str, lastWord + ' ', '', [rfReplaceAll]);
-
-
+  writeln(s1);
   readln;
 
 end.

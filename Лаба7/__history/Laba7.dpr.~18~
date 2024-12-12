@@ -5,8 +5,6 @@ program Laba7;
 
 uses
   System.SysUtils;
-  const sogl='bcdfghjklmnpqrstvwxz'
-
 
 begin
   var
@@ -46,9 +44,6 @@ begin
   end;
 
   writeln('s1:'+s1);
-
-  s2 := StringReplace(str, lastWord + ' ', '', [rfReplaceAll]);
-
 
   readln;
 
