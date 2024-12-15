@@ -31,6 +31,7 @@ begin
       WordStart := I;
     end;
   end;
+
   if WordStart > 0 then
   begin
     TempWord := Copy(Input, WordStart, Length(Input) - WordStart + 1);
@@ -43,12 +44,13 @@ function CalculateSogls(const Input: string): real;
 begin
   var
     count: Integer;
-  count := 0;
+    count:=0;
   for var I := Low(Input) to High(Input) do
   begin
     if sogls.Contains(UpperCase(Input[I])) then
       Inc(count);
   end;
+
   Result := count / Length(Input);
 end;
 
@@ -63,10 +65,12 @@ begin
     Current := Arr[I];
     currentS := Arr2[I];
     J := I - 1;
+
     while (J >= 0) and (Arr[J] > Current) do
     begin
       Arr[J + 1] := Arr[J];
       Arr2[J + 1] := Arr2[J];
+
       Dec(J);
     end;
 
@@ -77,13 +81,14 @@ end;
 
 begin
   var
-    str, s1, s2, usedCombos, last: string;
+    str, s1, s2, usedCombos,last: string;
   var
     words: TArray<string>;
   Readln(str);
   words := SplitStringToWords(str);
   for var I := Low(words) to High(words) - 1 do
   begin
+
     if LowerCase(words[I]) <> LowerCase(words[High(words)]) then
       s1 := s1 + words[I] + ' ';
   end;
@@ -104,36 +109,42 @@ begin
       begin
         if LowerCase(str[J] + str[J + 1]) = Combo then
           Inc(Counter);
+
       end;
       s1 := s1 + ' ' + Combo + '-' + IntToStr(Counter);
     end;
+
   end;
+
   If s1 = '' then
     Writeln('S1 is: Empty string')
   else
     Writeln('S1 is: ''', s1, '''');
+
   var
     parts: TArray<real>;
-  last := words[High(words)];
+  last:=words[High(words)];
   SetLength(parts, Length(words));
   for var I := Low(parts) to High(parts) do
   begin
     parts[I] := CalculateSogls(words[I]);
   end;
   DualInsertionSort(parts, words);
+
   for var I := Low(words) to High(words) - 1 do
   begin
 
     if LowerCase(words[I]) <> LowerCase(last) then
       s2 := s2 + words[I] + ' ';
   end;
-  if (Length(words) <> 0) and (LowerCase(words[High(words)]) <> LowerCase(last))
-  then
+  if (Length(words) <> 0) and (LowerCase(words[High(words)]) <> LowerCase(last)) then
     s2 := s2 + words[High(words)];
+
   If s2 = '' then
     Writeln('S2 is: Empty string')
   else
     Writeln('S2 is: ''', s2, '''');
+
   Readln;
 
 end.

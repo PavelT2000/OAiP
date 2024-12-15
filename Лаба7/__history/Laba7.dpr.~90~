@@ -5,6 +5,7 @@ program Laba7;
 
 uses
   System.SysUtils;
+const sogls='BCDFGHJKLMNPQRSTVWXYZ';
 
 function SplitStringToWords(const Input: string): TArray<string>;
 var
@@ -37,44 +38,74 @@ begin
   end;
 end;
 
+function CalculateSogls(const Input: string):real;
+begin
+var count:integer;
+for var i := Low(Input) to High(Input) do
+begin
+  if sogls.Contains(Input[i]) then
+  Inc(count);
+
+end;
+
+Result:=count/Length(Input);
+end;
+
+procedure DualInsertionSort(var Arr: array of Real;var Arr2: array of String);
+var
+  I, J: Integer;
+  Current: Real;
+  current:string;
+begin
+  for I := 1 to High(Arr) do
+  begin
+    Current := Arr[I];
+    J := I - 1;
+
+    while (J >= 0) and (Arr[J] > Current) do
+    begin
+      Arr[J + 1] := Arr[J];
+      Dec(J);
+    end;
+
+    // Вставляем элемент на своё место
+    Arr[J + 1] := Current;
+  end;
+end;
 begin
   var
-    str, tempStr, s1, s2, usedCombos: string;
+    str, s1, s2, usedCombos: string;
   var
     words: TArray<string>;
   Readln(str);
   words := SplitStringToWords(str);
   for var I := Low(words) to High(words) - 1 do
   begin
-    tempStr := tempStr + words[I];
+
     if LowerCase(words[I]) <> LowerCase(words[High(words)]) then
       s1 := s1 + words[I] + ' ';
   end;
   if Length(words) <> 0 then
-  begin
-    tempStr := tempStr + words[High(words)];
     s1 := s1 + words[High(words)];
-  end;
-  for var I := Low(tempStr) to High(tempStr) - 1 do
+  for var I := Low(Str) to High(Str) - 1 do
   begin
     var
       Combo: string;
     var
       Counter: Integer;
-    Counter:=1;
-    Combo := tempStr[I] + tempStr[I + 1];
-    if not usedCombos.Contains(Combo) then
+    Counter := 1;
+    Combo := LowerCase(Str[I] + Str[I + 1]);
+    if not (usedCombos.Contains(Combo) or Combo.Contains(' ')) then
     begin
       usedCombos := usedCombos + Combo;
-      for var j := I + 1 to High(tempStr)-1 do
+      for var j := I + 1 to High(Str) - 1 do
       begin
-        if tempStr[j] + tempStr[j + 1] = Combo then
+        if LowerCase(Str[j] + Str[j + 1]) = Combo then
           Inc(Counter);
 
       end;
-      S1:=S1+' '+Combo+'-'+IntToStr(Counter);
+      s1 := s1 + ' ' + Combo + '-' + IntToStr(Counter);
     end;
-
 
   end;
 
@@ -82,6 +113,21 @@ begin
     Writeln('S1 is: Empty string')
   else
     Writeln('S1 is: ''', s1, '''');
+
+
+  var parts:TArray<real>;
+  SetLength(parts,Length(words));
+  for var i := Low(parts) to High(parts) do
+  begin
+    parts[i]:=CalculateSogls(words[i]);
+  end;
+  DualInsertionSort(parts,words);
+
+
+
   Readln;
+
+
+
 
 end.
