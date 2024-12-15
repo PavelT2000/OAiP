@@ -24,14 +24,14 @@ begin
 
     lastWord := str.Substring(i, length(str) - i);
     s1 := str;
-    s1 := StringReplace(s1, lastWord+' ', '', [rfReplaceAll]);
+    s1 := StringReplace(s1, lastWord, '', [rfReplaceAll]);
 
   end;
 
   for var i := 1 to length(str) - 1 do
   begin
 
-    if (str[i] = str[i + 1]) and not (usedCombos.Contains(str[i] + str[i + 1])) then
+    if (str[i] = str[i + 1]) and not(usedCombos.Contains(str[i] + str[i + 1]) then
     begin
       var
         counter: integer;
@@ -48,7 +48,6 @@ begin
 
     end;
   end;
-  WriteLn(S1);
   readln;
 
 end.

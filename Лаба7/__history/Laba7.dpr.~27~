@@ -24,7 +24,7 @@ begin
 
     lastWord := str.Substring(i, length(str) - i);
     s1 := str;
-    s1 := StringReplace(s1, lastWord+' ', '', [rfReplaceAll]);
+    s1 := StringReplace(s1, lastWord, '', [rfReplaceAll]);
 
   end;
 

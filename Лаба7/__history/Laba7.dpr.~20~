@@ -8,7 +8,7 @@ uses
 
 begin
   var
-    str, s1, s2, lastWord,usedCombos: string;
+    str, s1, s2, lastWord: string;
   var
     testVar: integer;
   readln(str);
@@ -24,31 +24,29 @@ begin
 
     lastWord := str.Substring(i, length(str) - i);
     s1 := str;
-    s1 := StringReplace(s1, lastWord+' ', '', [rfReplaceAll]);
+    s1 := StringReplace(s1, lastWord, '', [rfReplaceAll]);
 
   end;
 
   for var i := 1 to length(str) - 1 do
   begin
 
-    if (str[i] = str[i + 1]) and not (usedCombos.Contains(str[i] + str[i + 1])) then
+    if str[i] = str[i + 1] then
     begin
       var
         counter: integer;
       counter := 1;
-      for var j := i + 1 to length(str) - 1 do
+      for var j := i + 2 to length(str) - 1 do
       begin
-        if str[j] = str[j + 1] then
+        if str[i] = str[i + 1] then
           Inc(counter);
 
       end;
-      s1:=s1+str[i]+str[i+1]+'-';
-      usedCombos:=usedCombos+str[i]+str[i+1]+' ';
+      s1:=s1+str[i]+str[i+1];
       s1:=s1+IntToStr(counter)+' ';
 
     end;
   end;
-  WriteLn(S1);
   readln;
 
 end.
