@@ -60,12 +60,12 @@ begin
       Counter: Integer;
     Counter := 1;
     Combo := LowerCase(Str[I] + Str[I + 1]);
-    if not (usedCombos.Contains(Combo) or Combo.Contains(' ')) then
+    if not usedCombos.Contains(Combo) then
     begin
       usedCombos := usedCombos + Combo;
-      for var j := I + 1 to High(Str) - 1 do
+      for var j := I + 1 to High(tempStr) - 1 do
       begin
-        if LowerCase(Str[j] + Str[j + 1]) = Combo then
+        if LowerCase(tempStr[j] + tempStr[j + 1]) = Combo then
           Inc(Counter);
 
       end;
