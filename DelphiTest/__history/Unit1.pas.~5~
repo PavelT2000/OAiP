@@ -1,0 +1,44 @@
+type
+  TGameForm = class(TForm)
+  private
+    FBitmap: TBitmap; // Для хранения спрайтов
+    FX, FY: Integer; // Координаты спрайта
+    procedure RenderFrame;
+    procedure GameLoop(Sender: TObject);
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+  end;
+
+constructor TGameForm.Create(AOwner: TComponent);
+begin
+  inherited;
+  FBitmap := TBitmap.Create;
+  FBitmap.LoadFromFile('sprite.bmp'); // Загрузка спрайта
+  FX := 100; FY := 100;
+
+  // Таймер для постоянного обновления
+  TTimer.Create(Self).OnTimer := GameLoop;
+end;
+
+destructor TGameForm.Destroy;
+begin
+  FBitmap.Free;
+  inherited;
+end;
+
+procedure TGameForm.RenderFrame;
+begin
+  // Отрисовка на Canvas формы
+  Canvas.Brush.Color := clBlack;
+  Canvas.FillRect(ClientRect); // Очистка экрана
+  Canvas.Draw(FX, FY, FBitmap); // Рисуем спрайт
+end;
+
+procedure TGameForm.GameLoop(Sender: TObject);
+begin
+  FX := FX + 5; // Двигаем спрайт вправо
+  if FX > ClientWidth then FX := 0;
+  RenderFrame; // Перерисовываем кадр
+end;
+
