@@ -1,0 +1,140 @@
+program Project2;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+const
+  size = 10;
+
+Type
+  Tmatrix = array [1 .. size, 1 .. size] of integer;
+  Tmas = array [1 .. (size * size - size) div 2] of integer;
+
+procedure fillMatrix(var mat: Tmatrix);
+begin
+  for var I := 1 to size do
+  begin
+    for var J := 1 to size do
+    begin
+      mat[I, J] := Random(99);
+    end;
+  end;
+end;
+
+procedure GetMasFromMat(var mas: Tmas; var mat: Tmatrix);
+begin
+  var
+    n: integer;
+  n := 1;
+  for var I := 1 to size do
+  begin
+    for var J := 1 to I - 1 do
+    begin
+      mas[n] := mat[I, J];
+      Inc(n);
+    end;
+  end;
+end;
+
+procedure shake_sort(var arr: Tmas);
+
+var
+  left, right, I, temp, lastSwap: integer;
+begin
+  left := 1;
+  right := High(arr);
+  lastSwap := 0;
+  while (right > left) do
+  begin
+    for I := left to right - 1 do
+    begin
+      if (arr[I] > arr[I + 1]) then
+      begin
+        temp := arr[I];
+        arr[I] := arr[I + 1];
+        arr[I + 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    right := lastSwap;
+
+    for I := right downto left + 1 do
+    begin
+      if (arr[I] < arr[I - 1]) then
+      begin
+        temp := arr[I];
+        arr[I] := arr[I - 1];
+        arr[I - 1] := temp;
+        lastSwap := I;
+      end;
+    end;
+    left := lastSwap;
+
+  end;
+end;
+
+procedure FillMatFromMas(var mat: Tmatrix; var mas: Tmas);
+begin
+  var
+    n: integer;
+  n := 1;
+  for var I := 1 to size do
+  begin
+    for var J := 1 to I - 1 do
+    begin
+      mat[I, J] := mas[n];
+      Inc(n);
+    end;
+  end;
+
+end;
+
+procedure OutData(var mat: Tmatrix)overload;
+begin
+  Writeln;
+  for var I := 1 to size do
+  begin
+    for var J := 1 to size do
+    begin
+      Write(mat[I, J]:2, ' ')
+    end;
+    Writeln;
+  end;
+
+end;
+
+procedure OutData(var mas: Tmas)overload;
+begin
+  Writeln;
+  for var I := Low(mas) to High(mas) do
+  begin
+    write(mas[I]:2, ' ');
+  end;
+
+end;
+
+begin
+  var
+    mat: Tmatrix;
+  var
+    mas: Tmas;
+  fillMatrix(mat);
+  OutData(mat);
+
+  GetMasFromMat(mas, mat);
+
+  OutData(mas);
+
+  shake_sort(mas);
+
+  OutData(mas);
+  FillMatFromMas(mat, mas);
+
+
+  OutData(mat);
+  readln;
+
+end.
