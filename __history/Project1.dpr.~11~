@@ -1,0 +1,16 @@
+program alfabet;
+{$apptype Console}
+uses
+   SysUtils;
+begin
+var str:string;
+var str2:string;
+Readline(str);
+str:=LowerCase(str);
+for var i:=low(str) to high(str) do
+begin
+   str2:=str2+IntToStr(Ord(str[i])-Ord('a')+1)+' ';
+end;
+Writeln(str2);
+readln;
+end.

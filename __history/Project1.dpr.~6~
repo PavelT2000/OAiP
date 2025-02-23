@@ -1,0 +1,35 @@
+program sortarray;
+{$APPTYPE Console}
+const
+   size=40;
+var
+   arr: array[1..size] of Integer;
+begin
+var temp,i,j:integer;
+for i:=Low(arr) to High(Arr) do
+begin
+   arr[i]:=Random(100);
+   write(arr[i],' ');
+end;
+i:=Low(arr)+1;
+while i<=High(arr) do
+begin
+   j:=High(arr);
+   while j>=i do
+   begin
+      if arr[j-1]<arr[j] then
+      begin
+         temp:=arr[j-1];
+         arr[j-1]:=arr[j];
+         arr[j]:=temp;
+      end;
+   Dec(j);
+   end;
+Inc(i);
+end;
+for i:=Low(arr) to High(Arr) do
+begin
+   write(arr[i],' ');
+end;
+end.
+

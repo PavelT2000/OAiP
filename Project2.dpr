@@ -1,0 +1,17 @@
+uses SysUtils;
+begin
+var a,b:string;
+
+readln(a);
+a:=trim(a);
+b:=a[1];
+for var i:=low(a) to high(a)-1 do
+begin
+   if (a[i]=' ') and (a[i+1]<>' ') then
+   begin
+      b:=b+a[i+1];
+   end;
+end;
+writeln(b);
+readln;
+end.

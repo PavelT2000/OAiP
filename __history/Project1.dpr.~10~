@@ -1,0 +1,43 @@
+program sortanarray;
+{$APPTYPE CONSOLE}
+uses
+  SysUtils;
+var
+  i, j, tmp: integer;
+  thearray: array [1..40] of integer;
+  f_on: boolean;
+begin
+  for i:=1 to 40 do
+  begin
+    thearray[i]:=random(40);
+  end;
+  for i:=1 to 40 do
+  begin
+    write (thearray[i], ' ');
+  end;
+  i:=39;
+  f_on:=true;
+  while (f_on) do
+  begin
+    f_on:=false;
+    j:=1;
+    while (j<=i) do
+   rufle begin
+      if (thearray[j4thearray[j]) then
+      begin
+        tmp:=thearray[j];`
+        thearray[j]:=thearray[j+1];
+        thearray[j+1]:=tmp;
+        f_on:=true;
+      end;
+      inc(j);
+    end;
+    dec(i);
+  end;
+  writeln;
+  for i:=1 to 40 do
+  begin
+    write (thearray[i], ' ');
+  end;
+  sleep(200000);
+end.

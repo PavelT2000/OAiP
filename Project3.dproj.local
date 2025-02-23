@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2025.01.18 17:58:14.693,=C:\OAiP\Unit1.pas</Transaction>
+    <Transaction>2025.01.18 18:02:26.423,C:\OAiP\Project3.dproj=C:\OAiP\Project3.dproj</Transaction>
+    <Transaction>2025.01.18 18:03:29.251,C:\Учёба\EngineDelphi\MainUnit.dfm=C:\OAiP\Unit1.dfm</Transaction>
+    <Transaction>2025.01.18 18:03:29.251,C:\Учёба\EngineDelphi\MainUnit.pas=C:\OAiP\Unit1.pas</Transaction>
+    <Transaction>2025.01.18 18:03:59.757,=C:\OAiP\Unit2.pas</Transaction>
+    <Transaction>2025.01.18 18:04:26.184,C:\Учёба\EngineDelphi\Unit2.pas=C:\OAiP\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
