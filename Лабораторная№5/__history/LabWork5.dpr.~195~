@@ -62,7 +62,7 @@ begin
       comparisonCounter := comparisonCounter + 1;
       if (arr[I] > arr[I + 1]) then
       begin
-        swapCounter := swapCounter +1;
+        swapCounter := swapCounter + 1;
         temp := arr[I];
         arr[I] := arr[I + 1];
         arr[I + 1] := temp;
@@ -114,6 +114,50 @@ begin
 
 end;
 
+procedure quick_Sort(var A: arrT; N:integer; var comparisonCounter, swapCounter: integer);
+  procedure quick_Sort_main(left: integer; right: integer);
+  var
+    p, temp: integer;
+    I, j: integer;
+  begin
+    if (left <= right) then
+    begin
+      p := A[trunc((left + right) / 2)];
+      I := left;
+      j := right;
+      while (I <= j) do
+      begin
+        while (A[I] < p) do
+        begin
+          Inc(comparisonCounter);
+          inc(I);
+        end;
+        while (A[j] > p) do
+        begin
+          Inc(comparisonCounter);
+          Dec(j);
+        end;
+        if (I <= j) then
+        begin
+          temp := A[I];
+          A[I] := A[j];
+          A[j] := temp;
+          Inc(swapCounter);
+          inc(I);
+          Dec(j);
+        end;
+      end;
+
+      quick_Sort_main(left, j);
+      quick_Sort_main(I, right);
+
+    end;
+  end;
+
+begin
+ quick_Sort_main(Low(a),N);
+end;
+
 procedure printTableHat;
 begin
   writeln('/                                                                               \');
@@ -122,6 +166,15 @@ begin
   writeln('|     of      |----------|----------|----------|----------|----------|----------|');
   writeln('|    array    | Swaps    |comparison| swaps    |comparison| swaps    |comparison|');
   writeln('|-------------|----------|----------|----------|----------|----------|----------|');
+end;
+
+procedure printMas(var arr:arrT; N:integer);
+begin
+  for var i := Low(arr) to N do
+  begin
+    Write(arr[i],' ');
+  end;
+  writeln;
 end;
 
 procedure printInfo(var A, b: arrT; curLen: integer; name: string);
@@ -139,7 +192,12 @@ begin
   swapCounter := 0;
   shake_sort(b, curLen, comparisonCounter, swapCounter);
   write(swapCounter:10, '|', comparisonCounter:10, '|');
-  writeln('          |          |');
+  b := A;
+  comparisonCounter := 0;
+  swapCounter := 0;
+  quick_sort(b, curLen, comparisonCounter, swapCounter);
+  write(swapCounter:10, '|', comparisonCounter:10, '|');
+  writeln;
 
   A := b;
   writeln('|-------------|----------|----------|----------|----------|----------|----------|');
@@ -180,17 +238,21 @@ begin
   writeln('____________________________$_________________________$__________________________');
 
 end;
-
-begin
-  var
+var
     mainMas, unSortMas, sortMas: arrT;
+    a,b:integer;
+begin
+
   generateUnSortedMas(mainMas);
   unSortMas := mainMas;
+//  printMas(unSortMas,40);
+//  quick_Sort(unsortMas,40,a,b);
+//  printMas(unSortMas,40);
   printTableHat;
   printBlock(unSortMas, sortMas, mainMas, 10);
   printBlock(unSortMas, sortMas, mainMas, 100);
   printBlock(unSortMas, sortMas, mainMas, 2000);
-  //printCrabic;
+  printCrabic;
   readln;
 
 end.
