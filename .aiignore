@@ -1,0 +1,44 @@
+# Delphi/C++Builder Build Artifacts
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.drc
+*.map
+*.rsm
+*.tds
+*.local
+*.identcache
+*.tvsconfig
+*.groupproj.local
+*.dproj.local
+
+# IDE Temporary/Recovery Files
+__history/
+__recovery/
+*.tmp
+*.~*
+~$*
+
+# Documentation and Binary Blobs
+*.vsd
+*.vsdx
+*.doc
+*.docx
+*.pdf
+*.bmp
+*.png
+*.svg
+*.jar
+*.properties
+
+# Project Groups and Configs
+*.groupproj
+*.tvsconfig
+
+# Build Directories
+Win32/
+Win64/
+Debug/
+Release/
