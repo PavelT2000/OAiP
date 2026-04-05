@@ -1,0 +1,655 @@
+=== PROJECT HIERARCHY ===
+├── .aiignore
+├── .gitattributes
+├── 2ая кр
+│   ├── Project1.dpr
+│   ├── Project1.dproj
+│   ├── Project1.dproj.local
+│   ├── Project1.identcache
+│   ├── Project1.res
+│   ├── Project2.dpr
+│   ├── Project2.dproj
+│   ├── Project2.dproj.local
+│   ├── Project2.identcache
+│   ├── Project2.res
+│   ├── Project3.dpr
+│   ├── Project3.dproj
+│   ├── Project3.dproj.local
+│   ├── Project3.identcache
+│   └── __history
+│       ├── Project1.dpr.~52~
+│       ├── Project1.dpr.~53~
+│       ├── Project1.dpr.~54~
+│       ├── Project1.dpr.~55~
+│       ├── Project1.dpr.~56~
+│       ├── Project1.dpr.~57~
+│       ├── Project1.dpr.~58~
+│       ├── Project1.dpr.~59~
+│       ├── Project1.dpr.~60~
+│       ├── Project1.dpr.~61~
+│       ├── Project2.dpr.~70~
+│       ├── Project2.dpr.~71~
+│       ├── Project2.dpr.~72~
+│       ├── Project2.dpr.~73~
+│       ├── Project2.dpr.~74~
+│       ├── Project2.dpr.~75~
+│       ├── Project2.dpr.~76~
+│       ├── Project2.dpr.~77~
+│       ├── Project2.dpr.~78~
+│       ├── Project2.dpr.~79~
+│       ├── Project3.dpr.~1~
+│       ├── Project3.dpr.~2~
+│       ├── Project3.dpr.~3~
+│       ├── Project3.dpr.~4~
+│       ├── Project3.dpr.~5~
+│       └── Project3.dpr.~6~
+├── DelphiTest
+│   ├── Project1.dpr
+│   ├── Project1.dproj
+│   ├── Project1.dproj.local
+│   ├── Project1.res
+│   ├── Unit1.dfm
+│   ├── Unit1.pas
+│   ├── __history
+│   │   ├── Unit1.dfm.~1~
+│   │   ├── Unit1.dfm.~2~
+│   │   ├── Unit1.dfm.~3~
+│   │   ├── Unit1.dfm.~4~
+│   │   ├── Unit1.dfm.~5~
+│   │   ├── Unit1.pas.~1~
+│   │   ├── Unit1.pas.~2~
+│   │   ├── Unit1.pas.~3~
+│   │   ├── Unit1.pas.~4~
+│   │   └── Unit1.pas.~5~
+│   └── __recovery
+│       ├── Unit1.dfm
+│       ├── Unit1.pas
+│       └── __recovery.ini
+├── Project1.dpr
+├── Project1.dproj
+├── Project1.dproj.local
+├── Project1.identcache
+├── Project1.res
+├── Project2.dpr
+├── Project2.dproj
+├── Project2.dproj.local
+├── Project2.identcache
+├── Project2.res
+├── Project3.dpr
+├── Project3.dproj
+├── Project3.dproj.local
+├── Project3.identcache
+├── Project3.res
+├── ProjectGroup1_prjgroup.tvsconfig
+├── Unit1.dfm
+├── Unit1.pas
+├── __history
+│   ├── Project1.dpr.~10~
+│   ├── Project1.dpr.~11~
+│   ├── Project1.dpr.~12~
+│   ├── Project1.dpr.~13~
+│   ├── Project1.dpr.~14~
+│   ├── Project1.dpr.~5~
+│   ├── Project1.dpr.~6~
+│   ├── Project1.dpr.~7~
+│   ├── Project1.dpr.~8~
+│   ├── Project1.dpr.~9~
+│   ├── Project2.dpr.~1~
+│   ├── Project2.dpr.~2~
+│   ├── Project3.dpr.~1~
+│   └── Unit1.pas.~1~
+├── КР1задание
+│   ├── ControlWork1.dpr
+│   ├── ControlWork1.dproj
+│   ├── ControlWork1.dproj.local
+│   ├── ControlWork1.identcache
+│   ├── ControlWork1.res
+│   ├── ProjectGroup1.groupproj
+│   ├── ProjectGroup1.groupproj.local
+│   ├── ProjectGroup1_prjgroup.tvsconfig
+│   ├── __history
+│   │   ├── ControlWork1.dpr.~10~
+│   │   ├── ControlWork1.dpr.~11~
+│   │   ├── ControlWork1.dpr.~2~
+│   │   ├── ControlWork1.dpr.~3~
+│   │   ├── ControlWork1.dpr.~4~
+│   │   ├── ControlWork1.dpr.~5~
+│   │   ├── ControlWork1.dpr.~6~
+│   │   ├── ControlWork1.dpr.~7~
+│   │   ├── ControlWork1.dpr.~8~
+│   │   └── ControlWork1.dpr.~9~
+│   └── Схема ОсновнаяЛаба4.vsd
+├── КР2задание
+│   ├── ControlWork1.dpr
+│   ├── ControlWork1.dproj
+│   ├── ControlWork1.dproj.local
+│   ├── ControlWork1.identcache
+│   ├── ControlWork1.res
+│   ├── ControlWork2.dproj
+│   ├── __history
+│   │   ├── ControlWork1.dpr.~21~
+│   │   ├── ControlWork1.dpr.~22~
+│   │   ├── ControlWork1.dpr.~23~
+│   │   ├── ControlWork1.dpr.~24~
+│   │   ├── ControlWork1.dpr.~25~
+│   │   ├── ControlWork1.dpr.~26~
+│   │   ├── ControlWork1.dpr.~27~
+│   │   ├── ControlWork1.dpr.~28~
+│   │   ├── ControlWork1.dpr.~29~
+│   │   └── ControlWork1.dpr.~30~
+│   ├── ~$$Схема ОсновнаяЛаба4.~vsd
+│   ├── Лабораторная№2ДопЗадание блок-схема (2).vsd
+│   └── Схема ОсновнаяЛаба4.vsd
+├── КР3задание
+│   ├── ControlWork1.dpr
+│   ├── ControlWork1.dproj
+│   ├── ControlWork1.dproj.local
+│   ├── ControlWork1.identcache
+│   ├── ControlWork1.res
+│   ├── ControlWork2.dproj
+│   ├── ControlWork2.identcache
+│   ├── __history
+│   │   ├── ControlWork1.dpr.~21~
+│   │   ├── ControlWork1.dpr.~22~
+│   │   ├── ControlWork1.dpr.~23~
+│   │   ├── ControlWork1.dpr.~24~
+│   │   ├── ControlWork1.dpr.~25~
+│   │   ├── ControlWork1.dpr.~26~
+│   │   ├── ControlWork1.dpr.~27~
+│   │   ├── ControlWork1.dpr.~28~
+│   │   ├── ControlWork1.dpr.~29~
+│   │   └── ControlWork1.dpr.~30~
+│   ├── ~$$Схема ОсновнаяЛаба4.~vsd
+│   ├── КР2задание
+│   │   ├── ControlWork1.dpr
+│   │   ├── ControlWork1.dproj
+│   │   ├── ControlWork1.dproj.local
+│   │   ├── ControlWork1.identcache
+│   │   ├── ControlWork1.res
+│   │   ├── ControlWork2.dproj
+│   │   ├── __history
+│   │   │   ├── ControlWork1.dpr.~21~
+│   │   │   ├── ControlWork1.dpr.~22~
+│   │   │   ├── ControlWork1.dpr.~23~
+│   │   │   ├── ControlWork1.dpr.~24~
+│   │   │   ├── ControlWork1.dpr.~25~
+│   │   │   ├── ControlWork1.dpr.~26~
+│   │   │   ├── ControlWork1.dpr.~27~
+│   │   │   ├── ControlWork1.dpr.~28~
+│   │   │   ├── ControlWork1.dpr.~29~
+│   │   │   └── ControlWork1.dpr.~30~
+│   │   ├── ~$$Схема ОсновнаяЛаба4.~vsd
+│   │   ├── Лабораторная№2ДопЗадание блок-схема (2).vsd
+│   │   └── Схема ОсновнаяЛаба4.vsd
+│   ├── Лабораторная№2ДопЗадание блок-схема (2).vsd
+│   └── Схема ОсновнаяЛаба4.vsd
+├── ЛаборатонаяРабота№1
+│   ├── LabWorkNum1ver2.dpr
+│   ├── LabWorkNum1ver2.dproj
+│   ├── LabWorkNum1ver2.dproj.local
+│   ├── LabWorkNum1ver2.identcache
+│   ├── LabWorkNum1ver2.res
+│   ├── __history
+│   │   ├── LabWorkNum1ver2.dpr.~13~
+│   │   ├── LabWorkNum1ver2.dpr.~14~
+│   │   ├── LabWorkNum1ver2.dpr.~15~
+│   │   ├── LabWorkNum1ver2.dpr.~16~
+│   │   ├── LabWorkNum1ver2.dpr.~17~
+│   │   ├── LabWorkNum1ver2.dpr.~18~
+│   │   ├── LabWorkNum1ver2.dpr.~19~
+│   │   ├── LabWorkNum1ver2.dpr.~20~
+│   │   ├── LabWorkNum1ver2.dpr.~21~
+│   │   ├── LabWorkNum1ver2.dpr.~22~
+│   │   └── LabWorkNum1ver2.dproj.local.~1~
+│   ├── Лабораторная№1 блок-схема версия2.vsdx
+│   ├── Лабораторная№1 блок-схема.vsdx
+│   ├── Отчет_Лабораторная _работа1.doc
+│   └── Отчет_Лабораторная _работа1V2.doc
+├── ЛаборатонаяРабота№2
+│   ├── LabWork2.dpr
+│   ├── LabWork2.dproj
+│   ├── LabWork2.dproj.local
+│   ├── LabWork2.identcache
+│   ├── LabWork2.res
+│   ├── LabWork2Recursion.dproj
+│   ├── LabWork2Recursion.dproj.local
+│   ├── LabWork2Recursion.identcache
+│   ├── LabWork2Recursion.res
+│   ├── __history
+│   │   ├── LabWork2.dpr.~54~
+│   │   ├── LabWork2.dpr.~55~
+│   │   ├── LabWork2.dpr.~56~
+│   │   ├── LabWork2.dpr.~57~
+│   │   ├── LabWork2.dpr.~58~
+│   │   ├── LabWork2.dpr.~59~
+│   │   ├── LabWork2.dpr.~60~
+│   │   ├── LabWork2.dpr.~61~
+│   │   ├── LabWork2.dpr.~62~
+│   │   └── LabWork2.dpr.~63~
+│   ├── Отчет_Лабораторная _работа2.doc
+│   └── СхемаЛаб2.vsd
+├── Лабораторная№1 доп задание
+│   ├── Dopzadanie1.dpr
+│   ├── Dopzadanie1.dproj
+│   ├── Dopzadanie1.dproj.local
+│   ├── Dopzadanie1.identcache
+│   ├── Dopzadanie1.res
+│   ├── Dopzadanie1execution.dpr
+│   ├── Dopzadanie1execution.dproj
+│   ├── Dopzadanie1execution.dproj.local
+│   ├── Dopzadanie1execution.identcache
+│   ├── Dopzadanie1execution.res
+│   ├── __history
+│   │   ├── Dopzadanie1.dpr.~53~
+│   │   ├── Dopzadanie1.dpr.~54~
+│   │   ├── Dopzadanie1.dpr.~55~
+│   │   ├── Dopzadanie1.dpr.~56~
+│   │   ├── Dopzadanie1.dpr.~57~
+│   │   ├── Dopzadanie1.dpr.~58~
+│   │   ├── Dopzadanie1.dpr.~59~
+│   │   ├── Dopzadanie1.dpr.~60~
+│   │   ├── Dopzadanie1.dpr.~61~
+│   │   ├── Dopzadanie1.dpr.~62~
+│   │   ├── Dopzadanie1execution.dpr.~1~
+│   │   └── Dopzadanie1execution.dpr.~2~
+│   ├── Отчет_Лабораторная _работа1_допЗадание.doc
+│   └── Схема Основная.vsd
+├── Лабораторная№2 доп задание
+│   ├── LabWork2Dop.dpr
+│   ├── LabWork2Dop.dproj
+│   ├── LabWork2Dop.dproj.local
+│   ├── LabWork2Dop.identcache
+│   ├── LabWork2Dop.res
+│   ├── __history
+│   │   ├── LabWork2Dop.dpr.~12~
+│   │   ├── LabWork2Dop.dpr.~13~
+│   │   ├── LabWork2Dop.dpr.~14~
+│   │   ├── LabWork2Dop.dpr.~15~
+│   │   ├── LabWork2Dop.dpr.~16~
+│   │   ├── LabWork2Dop.dpr.~17~
+│   │   ├── LabWork2Dop.dpr.~18~
+│   │   ├── LabWork2Dop.dpr.~19~
+│   │   ├── LabWork2Dop.dpr.~20~
+│   │   ├── LabWork2Dop.dpr.~21~
+│   │   ├── Project6.dpr.~33~
+│   │   ├── Project6.dpr.~34~
+│   │   ├── Project6.dpr.~35~
+│   │   ├── Project6.dpr.~36~
+│   │   ├── Project6.dpr.~37~
+│   │   ├── Project6.dpr.~38~
+│   │   ├── Project6.dpr.~39~
+│   │   ├── Project6.dpr.~40~
+│   │   ├── Project6.dpr.~41~
+│   │   └── Project6.dpr.~42~
+│   ├── Лабораторная№2ДопЗадание блок-схема (2).vsd
+│   └── Отчет_Лабораторная _работа2_допЗадание.doc
+├── Лабораторная№3
+│   ├── LabWork3.dpr
+│   ├── LabWork3.dproj
+│   ├── LabWork3.dproj.local
+│   ├── LabWork3.identcache
+│   ├── LabWork3.res
+│   ├── LabWork3V2.dpr
+│   ├── LabWork3V2.dproj.local
+│   ├── LabWork3V2.identcache
+│   ├── LabWork3V2.res
+│   ├── ProjectGroup1.groupproj
+│   ├── ProjectGroup1.groupproj.local
+│   ├── __history
+│   │   ├── LabWork3.dpr.~38~
+│   │   ├── LabWork3.dpr.~39~
+│   │   ├── LabWork3.dpr.~40~
+│   │   ├── LabWork3.dpr.~41~
+│   │   ├── LabWork3.dpr.~42~
+│   │   ├── LabWork3.dpr.~43~
+│   │   ├── LabWork3.dpr.~44~
+│   │   ├── LabWork3.dpr.~45~
+│   │   ├── LabWork3.dpr.~46~
+│   │   ├── LabWork3.dpr.~47~
+│   │   ├── LabWork3.dproj.local.~1~
+│   │   ├── LabWork3V2.dpr.~60~
+│   │   ├── LabWork3V2.dpr.~61~
+│   │   ├── LabWork3V2.dpr.~62~
+│   │   ├── LabWork3V2.dpr.~63~
+│   │   ├── LabWork3V2.dpr.~64~
+│   │   ├── LabWork3V2.dpr.~65~
+│   │   ├── LabWork3V2.dpr.~66~
+│   │   ├── LabWork3V2.dpr.~67~
+│   │   ├── LabWork3V2.dpr.~68~
+│   │   └── LabWork3V2.dpr.~69~
+│   ├── Отчет_Лабораторная _работа3.doc
+│   └── Схема Основная.vsd
+├── Лабораторная№3доп
+│   ├── LabWorkNum3Dop.dpr
+│   ├── LabWorkNum3Dop.dproj
+│   ├── LabWorkNum3Dop.dproj.local
+│   ├── LabWorkNum3Dop.identcache
+│   ├── LabWorkNum3Dop.res
+│   ├── Trash
+│   │   ├── CosThrowTailerDerden.dpr
+│   │   ├── CosThrowTailerDerden.dproj.local
+│   │   ├── CosThrowTailerDerden.identcache
+│   │   ├── LabWork3.dpr
+│   │   ├── LabWork3.dproj
+│   │   ├── LabWork3.dproj.local
+│   │   ├── LabWork3.identcache
+│   │   ├── LabWork3.res
+│   │   ├── LabWork3V2.dpr
+│   │   ├── LabWork3V2.dproj
+│   │   ├── LabWork3V2.dproj.local
+│   │   ├── LabWork3V2.identcache
+│   │   ├── LabWork3V2.res
+│   │   ├── LabWorkNum1ver2.dpr
+│   │   ├── LabWorkNum1ver2.dproj
+│   │   ├── LabWorkNum1ver2.dproj.local
+│   │   ├── LabWorkNum1ver2.identcache
+│   │   ├── LabWorkNum1ver2.res
+│   │   ├── ProjectGroup1.groupproj
+│   │   ├── ProjectGroup1.groupproj.local
+│   │   ├── SinThrowTailerDerden.dproj
+│   │   ├── SinThrowTailerDerden.dproj.local
+│   │   ├── SinThrowTailerDerden.identcache
+│   │   ├── SinThrowTailerDerden.res
+│   │   └── __history
+│   │       ├── CosThrowTailerDerden.dpr.~33~
+│   │       ├── CosThrowTailerDerden.dpr.~34~
+│   │       ├── CosThrowTailerDerden.dpr.~35~
+│   │       ├── CosThrowTailerDerden.dpr.~36~
+│   │       ├── CosThrowTailerDerden.dpr.~37~
+│   │       ├── CosThrowTailerDerden.dpr.~38~
+│   │       ├── CosThrowTailerDerden.dpr.~39~
+│   │       ├── CosThrowTailerDerden.dpr.~40~
+│   │       ├── CosThrowTailerDerden.dpr.~41~
+│   │       └── CosThrowTailerDerden.dpr.~42~
+│   ├── __history
+│   │   ├── CosThrowTailerDerden.dpr.~10~
+│   │   ├── CosThrowTailerDerden.dpr.~11~
+│   │   ├── CosThrowTailerDerden.dpr.~12~
+│   │   ├── CosThrowTailerDerden.dpr.~13~
+│   │   ├── CosThrowTailerDerden.dpr.~14~
+│   │   ├── CosThrowTailerDerden.dpr.~15~
+│   │   ├── CosThrowTailerDerden.dpr.~16~
+│   │   ├── CosThrowTailerDerden.dpr.~7~
+│   │   ├── CosThrowTailerDerden.dpr.~8~
+│   │   ├── CosThrowTailerDerden.dpr.~9~
+│   │   ├── LabWork3.dpr.~38~
+│   │   ├── LabWork3.dpr.~39~
+│   │   ├── LabWork3.dpr.~40~
+│   │   ├── LabWork3.dpr.~41~
+│   │   ├── LabWork3.dpr.~42~
+│   │   ├── LabWork3.dpr.~43~
+│   │   ├── LabWork3.dpr.~44~
+│   │   ├── LabWork3.dpr.~45~
+│   │   ├── LabWork3.dpr.~46~
+│   │   ├── LabWork3.dpr.~47~
+│   │   ├── LabWork3.dproj.local.~1~
+│   │   ├── LabWork3V2.dpr.~10~
+│   │   ├── LabWork3V2.dpr.~11~
+│   │   ├── LabWork3V2.dpr.~12~
+│   │   ├── LabWork3V2.dpr.~13~
+│   │   ├── LabWork3V2.dpr.~14~
+│   │   ├── LabWork3V2.dpr.~15~
+│   │   ├── LabWork3V2.dpr.~16~
+│   │   ├── LabWork3V2.dpr.~7~
+│   │   ├── LabWork3V2.dpr.~8~
+│   │   ├── LabWork3V2.dpr.~9~
+│   │   ├── LabWorkNum1ver2.dpr.~31~
+│   │   ├── LabWorkNum1ver2.dpr.~32~
+│   │   ├── LabWorkNum1ver2.dpr.~33~
+│   │   ├── LabWorkNum1ver2.dpr.~34~
+│   │   ├── LabWorkNum1ver2.dpr.~35~
+│   │   ├── LabWorkNum1ver2.dpr.~36~
+│   │   ├── LabWorkNum1ver2.dpr.~37~
+│   │   ├── LabWorkNum1ver2.dpr.~38~
+│   │   ├── LabWorkNum1ver2.dpr.~39~
+│   │   ├── LabWorkNum1ver2.dpr.~40~
+│   │   ├── LabWorkNum3Dop.dpr.~69~
+│   │   ├── LabWorkNum3Dop.dpr.~70~
+│   │   ├── LabWorkNum3Dop.dpr.~71~
+│   │   ├── LabWorkNum3Dop.dpr.~72~
+│   │   ├── LabWorkNum3Dop.dpr.~73~
+│   │   ├── LabWorkNum3Dop.dpr.~74~
+│   │   ├── LabWorkNum3Dop.dpr.~75~
+│   │   ├── LabWorkNum3Dop.dpr.~76~
+│   │   ├── LabWorkNum3Dop.dpr.~77~
+│   │   └── LabWorkNum3Dop.dpr.~78~
+│   ├── Отчет_Лабораторная _работа3доп.doc
+│   └── Схема Основная.vsd
+├── Лабораторная№4
+│   ├── LabWorkNum4.dpr
+│   ├── LabWorkNum4.dproj
+│   ├── LabWorkNum4.dproj.local
+│   ├── LabWorkNum4.identcache
+│   ├── LabWorkNum4.res
+│   ├── LabWorkNum4V2.dpr
+│   ├── LabWorkNum4V2.dproj
+│   ├── LabWorkNum4V2.dproj.local
+│   ├── LabWorkNum4V2.identcache
+│   ├── LabWorkNum4V2.res
+│   ├── LabWorkNum4V3.dpr
+│   ├── LabWorkNum4V3.dproj
+│   ├── LabWorkNum4V3.dproj.local
+│   ├── LabWorkNum4V3.identcache
+│   ├── LabWorkNum4V3.res
+│   ├── __history
+│   │   ├── LabWorkNum4.dpr.~42~
+│   │   ├── LabWorkNum4.dpr.~43~
+│   │   ├── LabWorkNum4.dpr.~44~
+│   │   ├── LabWorkNum4.dpr.~45~
+│   │   ├── LabWorkNum4.dpr.~46~
+│   │   ├── LabWorkNum4.dpr.~47~
+│   │   ├── LabWorkNum4.dpr.~48~
+│   │   ├── LabWorkNum4.dpr.~49~
+│   │   ├── LabWorkNum4.dpr.~50~
+│   │   ├── LabWorkNum4.dpr.~51~
+│   │   ├── LabWorkNum4V2.dpr.~100~
+│   │   ├── LabWorkNum4V2.dpr.~101~
+│   │   ├── LabWorkNum4V2.dpr.~102~
+│   │   ├── LabWorkNum4V2.dpr.~103~
+│   │   ├── LabWorkNum4V2.dpr.~104~
+│   │   ├── LabWorkNum4V2.dpr.~105~
+│   │   ├── LabWorkNum4V2.dpr.~96~
+│   │   ├── LabWorkNum4V2.dpr.~97~
+│   │   ├── LabWorkNum4V2.dpr.~98~
+│   │   ├── LabWorkNum4V2.dpr.~99~
+│   │   ├── LabWorkNum4V3.dpr.~56~
+│   │   ├── LabWorkNum4V3.dpr.~57~
+│   │   ├── LabWorkNum4V3.dpr.~58~
+│   │   ├── LabWorkNum4V3.dpr.~59~
+│   │   ├── LabWorkNum4V3.dpr.~60~
+│   │   ├── LabWorkNum4V3.dpr.~61~
+│   │   ├── LabWorkNum4V3.dpr.~62~
+│   │   ├── LabWorkNum4V3.dpr.~63~
+│   │   ├── LabWorkNum4V3.dpr.~64~
+│   │   └── LabWorkNum4V3.dpr.~65~
+│   ├── Отчет_Лабораторная _работа4.doc
+│   └── Схема ОсновнаяЛаба4.vsd
+├── Лабораторная№5
+│   ├── LabWork5.dpr
+│   ├── LabWork5.dproj
+│   ├── LabWork5.dproj.local
+│   ├── LabWork5.identcache
+│   ├── LabWork5.res
+│   ├── LabWork5_project.tvsconfig
+│   ├── __history
+│   │   ├── LabWork5.dpr.~193~
+│   │   ├── LabWork5.dpr.~194~
+│   │   ├── LabWork5.dpr.~195~
+│   │   ├── LabWork5.dpr.~196~
+│   │   ├── LabWork5.dpr.~197~
+│   │   ├── LabWork5.dpr.~198~
+│   │   ├── LabWork5.dpr.~199~
+│   │   ├── LabWork5.dpr.~200~
+│   │   ├── LabWork5.dpr.~201~
+│   │   └── LabWork5.dpr.~202~
+│   ├── Анализ сортировок массивов 451001.docx
+│   ├── Отчет_Лабораторная _работа5.doc
+│   ├── Схема ОсновнаяЛаба5.vsd
+│   └── Точечный рисунок.bmp
+├── Лабораторная№6
+│   ├── Lab6.doc
+│   ├── Lab6V2.doc
+│   ├── LabWork6.dpr
+│   ├── LabWork6.dproj
+│   ├── LabWork6.dproj.local
+│   ├── LabWork6.identcache
+│   ├── LabWork6.res
+│   ├── LabWork6v2.dproj
+│   ├── LabWork6v2.dproj.local
+│   ├── LabWork6v2.identcache
+│   ├── LabWork6v2.res
+│   ├── LabWork6v2_project.tvsconfig
+│   ├── ProjectGroup1.groupproj
+│   ├── ProjectGroup1.groupproj.local
+│   ├── __history
+│   │   ├── LabWork6.dpr.~303~
+│   │   ├── LabWork6.dpr.~304~
+│   │   ├── LabWork6.dpr.~305~
+│   │   ├── LabWork6.dpr.~306~
+│   │   ├── LabWork6.dpr.~307~
+│   │   ├── LabWork6.dpr.~308~
+│   │   ├── LabWork6.dpr.~309~
+│   │   ├── LabWork6.dpr.~310~
+│   │   ├── LabWork6.dpr.~311~
+│   │   └── LabWork6.dpr.~312~
+│   ├── Лаб6ОАиП6.vsd
+│   ├── Лаба6.drawio.svg
+│   ├── Схема ОсновнаяЛаба6.vsd
+│   ├── лаба6.drawio.png
+│   └── массивы_ЛР_6 для 451001 (5).doc
+├── Лабораторная№7
+│   ├── Laba7.Dual
+│   ├── Laba7.Main
+│   ├── Laba7.Sogls
+│   ├── Laba7.Split
+│   ├── Laba7.dpr
+│   ├── Laba7.dproj
+│   ├── Laba7.dproj.local
+│   ├── Laba7.identcache
+│   ├── Laba7.res
+│   ├── __history
+│   │   ├── Laba7.dpr.~100~
+│   │   ├── Laba7.dpr.~101~
+│   │   ├── Laba7.dpr.~102~
+│   │   ├── Laba7.dpr.~103~
+│   │   ├── Laba7.dpr.~104~
+│   │   ├── Laba7.dpr.~105~
+│   │   ├── Laba7.dpr.~106~
+│   │   ├── Laba7.dpr.~107~
+│   │   ├── Laba7.dpr.~108~
+│   │   ├── Laba7.dpr.~109~
+│   │   ├── Laba7.dpr.~110~
+│   │   ├── Laba7.dpr.~111~
+│   │   ├── Laba7.dpr.~92~
+│   │   ├── Laba7.dpr.~93~
+│   │   ├── Laba7.dpr.~94~
+│   │   ├── Laba7.dpr.~95~
+│   │   ├── Laba7.dpr.~96~
+│   │   ├── Laba7.dpr.~97~
+│   │   ├── Laba7.dpr.~98~
+│   │   └── Laba7.dpr.~99~
+│   ├── struktogrammeditor.jar
+│   ├── struktogrammeditor.properties
+│   ├── ~$Лаба7.doc
+│   ├── ~WRL0001.tmp
+│   ├── Задание на строки ЛР_7 для 451001.doc
+│   └── Лаба7.doc
+├── Образец Данке.vsd
+└── Тематическое_содержание_УчД_Ин_яз_IT.docx
+
+=== SOURCE CODE ===
+
+--- FILE: .aiignore ---
+# Delphi/C++Builder Build Artifacts
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.drc
+*.map
+*.rsm
+*.tds
+*.local
+*.identcache
+*.tvsconfig
+*.groupproj.local
+*.dproj.local
+
+# IDE Temporary/Recovery Files
+__history/
+__recovery/
+*.tmp
+*.~*
+~$*
+
+# Documentation and Binary Blobs
+*.vsd
+*.vsdx
+*.doc
+*.docx
+*.pdf
+*.bmp
+*.png
+*.svg
+*.jar
+*.properties
+
+# Project Groups and Configs
+*.groupproj
+*.tvsconfig
+
+# Build Directories
+Win32/
+Win64/
+Debug/
+Release/
+
+--- FILE: .gitattributes ---
+# Auto detect text files and perform LF normalization
+* text=auto
+
+
+--- FILE: DelphiTest\Unit1.pas ---
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.
+
+
+--- FILE: DelphiTest\Unit1.dfm ---
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+end
